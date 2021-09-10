@@ -1,0 +1,8 @@
+AWS Videos
+https://aws.amazon.com/training/intro_series/
+Elastic Compute Cloud (EC2) - virtual machine ie linux 
+Simple Storage Service (S3) - host static files = html, javascript, css, images, video, links
+Elastic Block Store (EBS) - external hard drive
+Relational Database Service (RDS) - hosts oracle db, others
+Route 53 - Name DNS
+Elastic Load Balancing

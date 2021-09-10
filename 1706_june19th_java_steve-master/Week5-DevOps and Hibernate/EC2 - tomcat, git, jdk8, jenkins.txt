@@ -1,0 +1,100 @@
+0. sudo yum update -needed after you first create your EC2
+
+1. wget http://apache.mirrors.ionfish.org/tomcat/tomcat-7/v7.0.72/bin/apache-tomcat-7.0.72.tar.gz
+2. tar -zxvf apache-tomcat.tar.gz
+
+
+3. Download JDK 8 -> upload to EC2 *FROM YOUR LOCAL COMMANDLINE TO EC2"
+		-Make a Java Directory in your linux EC2
+	 using pscp 
+pscp -i key.ppk 
+C:\path\to\file ec2-user@you.ip:filename
+
+	*Note refer to EC2-WL12c document*
+
+4. Install java:   sudo rpm -ivh jdk8.rpm
+
+
+5. export JAVA_HOME=/usr/java/jdk1.8.0_101
+
+
+6. export CATALINA_HOME=/home/ec2-user/apache-tomcat-7.0.70
+
+	test using: echo $CATALINA_HOME 
+
+
+7. Add a user in tomcat-users.xml 
+	manager-gui role
+ cd tomcat-dir/conf
+ 
+	nano tomcat-users.xml
+	
+Add entries:
+
+	<role rolename="manager-gui" />
+	
+<user username="tomcat" password="welcome1"
+ roles="manager-gui" />
+
+
+8. Start Tomcat with nohup
+ sudo nohup sh $CATALINA_HOME/bin/startup.sh &
+
+	*can also try 
+9. Visit Tomcat portal with 
+http://you ec2.public.ip:8080/manager/html
+
+
+--------Note to change tomcat port from 8080 to another port like 8090
+10. Shutdown tomcat, navagiate to your bin folder located in tomcat
+	sudo sh shutdown.sh (stops server)
+11. Update server.xml from 8080 to 8090
+	Navigate to tomcat's conf folder
+	sudo nano server.xml
+		update the connector 8080 to 8090
+	save
+11. start tomcat, navigate back to bin folder and start tomcat
+	sudo sh startup.sh
+
+--------------------------------------------------------------------------
+Install Git
+sudo yum install git 	...lol
+
+
+Install Maven
+sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+sudo yum install -y apache-maven
+mvn --version
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+Get Jenkins
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+
+sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+
+sudo yum install jenkins -y	
+
+sudo service jenkins start (to start or stop to stop)
+sudo su root -to get root access..
+
+
+7/19
+Jenkins Plugins
+	-Maven Integration Plugin
+	-Slack Notification Plugin
+	-Deploy to Container Plugin
+Google Jenkins Slack integration (to find out the information for the Slack Notification Plugin)
+	the url you're looking for will look similar to
+	subDomainName.slack.com/apps/jenkin 
+	e.g. 1706jun19java.slack.com/apps/A0F7VRFKN-jenkins-ci
+	make sure the subDomain matches the team you want to add an jenkins integration too
+
+In Jenkins Maven Pipeline item
+post-action build add Deploy to container
+
+	WAR/EAR files: **/*.war
+	Context path: whatever url you want your war to handle e.g. AjaxBank
+	then provide your tomcat crendentials and url
+
+

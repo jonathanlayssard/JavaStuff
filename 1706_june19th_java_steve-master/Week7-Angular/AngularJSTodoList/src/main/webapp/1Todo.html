@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Kelsey's Todo List</title>
+
+<link rel="stylesheet" href="resources/css/style.css" />
+
+</head>
+<body data-ng-app="todoListApp">
+<h1>Welcome to AngularJS</h1>
+
+	<h2>Todo List</h2>
+	<div id="mainCtrl" data-ng-controller="mainCtrl" >
+		<a href="" ng-click="helloworld()">Click Me</a>
+		<a href="" ng-click="helloworld()">Click Me1</a>
+		<div id="childCtrl" ng-controller="childofMainCtrl">
+			<a href="" ng-click="flashSmile()">Click Me2</a>
+			<a href="" ng-click="helloworld()">Click Me3</a>
+			{{myVar}}
+		</div>
+	</div>
+	<br />
+	
+	
+	<div ng-controller="siblingCtrl">
+		<a href="" ng-click="sibOfMainCtrl()">Sib Click me</a>
+	</div>
+	
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+	<script type="text/javascript" src="resources/js/app.js"></script>
+	<script type="text/javascript" src="resources/js/MyFirstDirective.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+FlashCard Hibernate Project
+
+Maven Jar project
+
+Setup hibernate, use the steps on the board
+
+Create the DAO with a single method for each CRUD operations
+
+Create an additional Read Method
+	-getAllFlashCards(); use the criteria interface to complete this

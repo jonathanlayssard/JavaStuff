@@ -1,0 +1,52 @@
+Build a mini fullstack maven project (prefer to use tomcat)
+
+Students & Teachers (no theme, just as is)
+Build a project that will allow students and teachers to login, and view the homepage
+The homepage will differ depending on whether they are a student or teacher
+Allow a student to register (and it will send the new student an email)
+
+---Part 1 Implement your DB
+Make 2 tables in your db, one for users and one for user_role
+	-Add a student and teacher role into the user_role table
+	-have a foreign key in users to the primary key for user_role
+Add a sequence and trigger for the primary key of your user table
+Add some dummy data
+
+--Part 2 Implement your Model
+Create a User JAVABEAN (not just a pojo) that is mapped to your user db table
+
+--Part 3 Implement your Data Layer
+Create a user dao and connect jdbc to your db
+Make/implement 2 methods 
+	-getUserByUsername(User user) -will return a User record from the db
+	-saveUser(User user) -will add a new User record to the db
+
+--Part 4 Implement your Presentation Layer
+Create a login.html page with a form allowing a user to login 
+	& a link to register.html
+Create a register.html with a form allowing a student to register 
+Create 2 different home html pages
+	-student.html
+	-teacher.html
+Create 2 different javascript file for each home page
+	-student.js
+	-teacher.js
+Once either one of the html pages has finished loading
+	-do an Ajax Request to pull the user's information and display it to the page
+
+--Part 5 Implement your Service (or Logic) Layer
+Create servlets to handle the requests from the client
+Once a user has logged in with valid credentials, save the user to the session 
+	and pull this information for the ajax request so the db doesn't have to be called a 2nd time
+Create a UserService class that will contain methods needed to complete the tasks
+Inside of UserService have method for registering a student
+	*Bonus* have this register service create a separate thread that will email the new student
+		example code has been made available on the repo
+		The response back to the user should not wait on the email to be send
+*Note* do not instantiate a daoImpl inside any servlet, only service classes have access to the dao
+
+--Part 6 Style your view
+Implement bootstrap to your html pages and style them
+
+Fully review your project code, and explain it from beginning to end by logging in as each user role
+Use RDS for bonus, but do last 

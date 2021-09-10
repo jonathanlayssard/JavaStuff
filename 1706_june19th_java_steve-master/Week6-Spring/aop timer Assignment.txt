@@ -1,0 +1,16 @@
+Timer
+
+Using Spring AOP, write a TimerAspect.
+
+
+
+This aspect should print the name of the method.
+
+This aspect should print how long the method took to run.
+
+This aspect should only time methods with at least one String parameter.
+
+This aspect should print the value & type of all parameters.
+
+
+add spring orm to the Spring MVC project

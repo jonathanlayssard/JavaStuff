@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS Basics</title>
+</head>
+<body data-ng-app="angularBasicsApp">
+	
+	<!-- 
+		AngularJS Expressions: {{ }} to print out model to the page
+		 
+		2 way data-binding: updates the view and the model data at sametime
+		
+		Custom Directive: an html tag or attribute that can inject its own HTML
+	-->
+	
+	<h1>AngularJS - JavaScript MVC Framework</h1>
+	<div hello-world></div>
+	
+	<input type="text" data-ng-model="whatever">
+	<p>{{whatever}}</p>
+	
+	<!-- Provide different views -->
+	    <div>
+            <ul>
+                <li><a href='#/!'>home</a></li>
+                <li><a href='#!about'>about</a></li>
+                <li><a href='#!contact'>contact</a></li>
+            </ul>
+        </div>
+        
+     <!-- Angular view: this is called Routing -->
+     <div ng-view></div>
+     
+     
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="js/HelloWorld.js" ></script>
+<script src="js/AboutCtrl.js" ></script>
+</body>
+</html>

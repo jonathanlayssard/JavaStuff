@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Html Styled using CSS</title>
+		
+		<link href="bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" /> 
+		<link href="resources/css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="StyledPage.html">Revature</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="AnotherStyledPage.html">Another Styled Page  <span class="sr-only">(current)</span></a></li>
+      </ul>
+      <form class="navbar-form navbar-left" method="GET" action="searchBar">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Search for awesome stuff</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="thirdStyledPage.html">Third Styled Page</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<!-- 
+
+	3 ways to select an HTML element(s) for CSS
+			By Name e.g. div, p, body
+			By Id e.g. #top
+			By Class e.g. .animal .redStuff
+
+ -->
+
+Welcome to HTML & CSS
+<div class="redStuff">
+	div 1 - red font
+</div>
+<div>
+	div 2 - blue font
+	<div>
+		<img id="duke" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/ThumbsUp.svg/2000px-ThumbsUp.svg.png" />
+		<button class="btn btn-danger">My Awesome Button</button>
+	</div>
+</div>
+<div id="anotherFont">
+	div 3 - another font
+</div>
+
+<div class="redStuff">
+	div 4 - red font
+	<div id="nestedChild">
+		nested/child div of div 4
+	</div>
+</div>
+</body>
+</html>

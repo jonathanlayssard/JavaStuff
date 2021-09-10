@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS's Todo List</title>
+
+<link rel="stylesheet" href="resources/css/style.css" />
+
+</head>
+<body data-ng-app="todoListApp">
+<div id="mainCtrl" data-ng-controller="mainCtrl" class="list" >
+
+<h1>Welcome to AngularJS</h1>
+
+
+	<h2>Todo List</h2>
+																			
+	
+		<div class="item" data-ng-class="{'editing-item':editing, 'edited':todo.edited}" ng-repeat="todo in todos" >
+			
+			<input type="checkbox" />
+			
+			<label class="editing-label" ng-hide="editing">{{todo.name}}</label>
+<input class="editing-label" type="text" ng-change="todo.edited = true;" ng-blur="editing =false;" ng-show="editing" ng-model="todo.name"/>
+			
+			<a href=""  ng-click=" editing = !editing">Edit</a>
+			<a href="" ng-click="saveTodo(todo)">Save</a>
+			<a href="" >Delete</a>
+		</div>
+	</div>
+	
+	
+	
+	
+	<!-- Scripts for AngularJS -->
+<!--  -->	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+
+	<!-- <script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script> -->
+
+	<script type="text/javascript" src="resources/js/app.js"></script>
+</body>
+</html>

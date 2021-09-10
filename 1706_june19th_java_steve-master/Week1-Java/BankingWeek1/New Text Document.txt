@@ -1,0 +1,11 @@
+This is an example project of the Banking Assignment
+	used with XML instead of a Database
+
+Everything remains the same except for the code
+	that will persist our POJOs will to
+	an XML file instead of using JDBC
+
+You will see that the DaoImpl doesn't do any
+	business logic, only CRUD operations
+	(it also it using generics but that
+	 was not a requirement)

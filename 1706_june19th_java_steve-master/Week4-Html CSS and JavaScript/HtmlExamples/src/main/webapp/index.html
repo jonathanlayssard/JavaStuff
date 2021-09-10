@@ -1,0 +1,116 @@
+<!DOCTYPE html><!-- html alone means HTML5 -->
+<html>
+	<head>
+		<!-- Metadata = data about data, like the POM file -->
+		<meta charset="ISO-8859-1">
+		<title>Index Page</title>
+	
+	
+	</head>
+<body>
+<!-- 
+	3 way to select an html element used in CSS & JavaScript
+		# 	  By ID
+		. 	  By Class
+		name  By element name e.g. p, h1, a, body, div 
+
+ -->
+
+
+<a class="awesomeAttribute" href="#bottom">Go to Bottom of page!</a>
+	<!-- h1 to h6 big to small font sizes -->
+	<h1>The body tag/element is used to display information to the screen</h1>
+	<h2>The body tag/element is used to display information to the screen</h2>
+	<h3>The body tag/element is used to display information to the screen</h3>
+	<h4>The body tag/element is used to display information to the screen</h4>
+	<h5>The body tag/element is used to display information to the screen</h5>
+	<h6>The body tag/element is used to display information to the screen</h6>
+	
+<b>My favorite hobbies (not in any particular order)</b>
+<ul class="awesomeAttribute">
+	<li>Football</li>
+	<li>Movies</li>
+	<li>Shapes</li>
+</ul>
+
+<!--  Strong also bolds but tells the browser it is IMPORTANT -->
+<strong>My favorite movies in order</strong>
+<ol>
+	<li>Square</li>
+	<li>Circle</li>
+	<li>Car</li>
+</ol>
+
+<!-- Divs are Block by default - meaning they span the width of the page -->
+<div>div 1</div>
+<div>div 2</div>
+<div>div 3</div>
+
+<!-- Span - Inline element, used to apply CSS styles -->
+<span>span 1</span>
+<span>span 2</span>
+<span>span 3</span>
+
+<!-- a for anchor, anchoring to the page and the href is an attribute of the anchor tag -->
+<a href="http://lmgtfy.com">Click me</a>
+
+<!-- table -->
+<table>
+	<tr>
+		<th>1st Col</th><!-- th: table header -->
+		<th>2nd Col</th>
+		<th>3rd Col</th>
+	</tr>
+
+	<tr><!-- tr: table row -->
+		<td>table data 1</td><!-- td: table data aka cells -->
+		<td>table data 2</td>
+		<td>table data 3</td>
+	</tr>
+	<tr>
+		<td>2nd row table data 1</td>
+		<td>2nd row table data 2</td>
+		<td>2nd row table data 3</td>
+	</tr>
+</table>
+
+<br><br><!-- br: break line -->
+
+<!-- 
+	Client-side Validation
+	Server-side Validation
+
+ -->
+
+<form action="url-to-server" method="POST" >
+	Name: <input type="text" placeholder="enter username" /> <br>
+	Password: <input type="password" /> <br>
+	Age: <input type="number" name="age" min="18" max="155" /> <br>
+	
+	Gender:<br>
+		<input type="radio" name="gender" value="male"/>M<br>
+		<input type="radio" name="gender" value="female"/>F<br>
+	Hobbies:
+		Fishing<input type="checkbox" name="hobby" value="fishing" /> 
+		Movies<input type="checkbox" name="hobby" value="Movies" />
+		Shapes<input type="checkbox" name="hobby" value="Shapes" />
+		Racecar<input type="checkbox" name="hobby" value="Racecar" /><br>
+	<input type="submit" />
+</form>
+
+<img src="https://upload.wikimedia.org/wikipedia/en/1/17/Batman-BenAffleck.jpg" 
+	alt="alternate text, when users can't see the image" 
+	style="width:100px;height:100px;"
+	/>
+
+<!-- iframe, a website within a website -->
+<iframe src="http://techcrunch.com" style="width:500px;height:400px;"></iframe>
+<a href="index.html">TOP</a>
+
+<!-- id attribute = uniquely identify the element -->
+<div id="bottom"></div>
+</body>
+</html>
+
+
+ 

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+     border-collapse: collapse;
+}
+
+table, th, td {
+     border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+Id: <input id="t_id" type="text"/> <br />
+
+Name: <input id="t_name" type="text"/> <br />
+
+Major: <input id="t_major" type="text"/> <br />
+
+<button id="add">Add</button>
+
+<table id="trainees">
+	<tr><th>Id</th><th>Name</th><th>Major</th></tr>
+</table>
+<form id="traineesForm" method="POST" action="addEmployees">
+	<input type="submit" value="Add Employees">
+</form>
+
+</body>
+<script type="text/javascript">
+function add(){
+	
+	//window object
+	alert("form Submitted");
+	
+	var id = document.getElementById("t_id").value;
+	var name = document.getElementById("t_name").value;
+	var major = document.getElementById("t_major").value;
+	
+	//Create Row Element
+	var row = document.createElement("tr");
+	
+	//Create Cell elements
+	var cell1 = document.createElement("td");
+	var cell2 = document.createElement("td");
+	var cell3 = document.createElement("td");
+	
+	//Append to the row
+	row.appendChild(cell1);
+	row.appendChild(cell2);
+	row.appendChild(cell3);
+	
+	//Add text 
+	cell1.innerHTML = id; 
+	cell2.innerHTML = name; 
+	cell3.innerHTML = major;
+	//Append to table
+	document.getElementById("trainees").appendChild(row);
+	
+	// Reset form fields
+	document.getElementById("t_id").value ="";
+	document.getElementById("t_name").value ="";
+	document.getElementById("t_major").value ="";
+	
+	
+}
+function submitEmployeesToServer(){
+	var id = document.getElementById("t_id").value;
+	var name = document.getElementById("t_name").value;
+	var major = document.getElementById("t_major").value;
+	
+	//Create input elements
+	var input_user_id = document.createElement("input");
+	var input_user_name = document.createElement("input");
+	var input_user_major = document.createElement("input");
+	
+	//Set input id attribute
+	input_user_id.name = "id";
+	input_user_id.value = id;
+	
+	//Set input user's name attributes
+	input_user_name.name = "name";
+	input_user_name.value= name;
+	
+	//Set input user's major attributes
+	input_user_major.name = "major";
+	input_user_major.value = major;
+	
+	//Append to the Form Attribute
+	document.getElementById("traineesForm").appendChild(input_user_id);
+	document.getElementById("traineesForm").appendChild(input_user_name);
+	document.getElementById("traineesForm").appendChild(input_user_major);
+	document.getElementById("traineesForm").appendChild(document.createElement("br"));
+}
+
+// Event listeners
+document.getElementById("add").addEventListener("click", 
+								submitEmployeesToServer, false);
+</script>
+</html>

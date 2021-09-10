@@ -1,0 +1,6 @@
+Banking Assignment - 1 Maven Project
+SQL Lab - 1 SQL File
+SQL Chinnook Join all tables - 1 SQL File
+
+Upload to your FirstName_LastName_Code folder
+	within a SQL Assignments Folder

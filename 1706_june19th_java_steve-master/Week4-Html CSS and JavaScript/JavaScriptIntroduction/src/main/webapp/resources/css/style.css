@@ -1,0 +1,65 @@
+@CHARSET "ISO-8859-1";
+/*
+	style.css
+*/
+div {
+	/* color: #82a8ab; */
+}
+
+#anotherFont {
+	color: #18dc29;
+}
+
+.redStuff {
+	color: red;
+	border: 2px black solid;
+}
+
+#nestedChild {
+	border: 2px red solid;
+	padding: 5px;
+    margin: 5px;
+}
+
+
+#duke{
+	width: 25%;
+}
+
+/*
+
+override bootstrap code
+
+*/
+
+.btn-danger{
+	background-color: rgba(189, 16, 10, 0.44);
+}
+
+
+/*
+	bubbleVsCapture.html css
+*/
+#outer{
+	background: black;
+	margin: 10px;
+}
+
+#inner{
+	background: red;
+	margin: 10px;
+}
+
+#innerMost{
+	background: aqua;
+	margin: 10px;
+}
+
+
+
+
+
+
+
+
+
